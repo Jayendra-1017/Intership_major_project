@@ -11,4 +11,4 @@ matplotlib
 pandas
 streamlit
 nltk
-g unicorn  
+gunicorn  
