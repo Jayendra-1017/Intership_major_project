@@ -1,4 +1,5 @@
 
+
 <!doctype html>
 <html lang="en">
 
@@ -12,7 +13,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link href="{{ url_for('static',filename = 'css/bootstrap.min.css')  }}" rel="stylesheet">
-    <title> Brest cancer pridiction  </title>
+    <title> Brest cancer pridiction </title>
 
     <style>
         * {
@@ -37,10 +38,11 @@
             background-color: black;
 
         }
-body{
-  background-color:#FFC0CB;
-}
-       
+
+        body {
+            background-color: #FFC0CB;
+        }
+
 
         /* Style the header with a grey background and some padding */
         .header {
@@ -119,6 +121,39 @@ body{
             margin-left: 10px;
             margin-right: 10px;
         }
+
+        .card {
+            /* Add shadows to create the "card" effect */
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            transition: 0.3s;
+        }
+
+        /* On mouse-over, add a deeper shadow */
+        .card:hover {
+            box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+        }
+
+        /* Add some padding inside the card container */
+        .container {
+            padding: 2px 16px;
+        }
+
+      
+
+
+        /* Add rounded corners to the top left and the top right corner of the image */
+        img {
+            border-radius: 5px 5px 0 0;
+        }
+
+        
+        .center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 400px;
+height: 400px;
+}
     </style>
 
 
@@ -128,26 +163,26 @@ body{
     <div class="header">
 
         <div class="header-right">
-            <a  href="/">HOME</a>
+            <a href="/">HOME</a>
             <a href="/contact">Contact us</a>
             <a href="/aboutusnew">about us</a>
-           
+
         </div>
-    
+
     </div>
     <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-          aria-haspopup="true" aria-expanded="false">
-          projects
+            aria-haspopup="true" aria-expanded="false">
+            projects
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="/Major">Major projects</a>
-          <a class="dropdown-item" href="/Minor">Minor projects</a>
-          
+            <a class="dropdown-item" href="/Major">Major projects</a>
+            <a class="dropdown-item" href="/Minor">Minor projects</a>
 
-         
+
+
         </div>
-      </li>
+    </li>
 </nav>
 
 
@@ -198,7 +233,7 @@ body{
             </div>
         </div>
     </div>
-    
+
     <div>
         <div id="carouselExampleCaptions" class="carousel slide carousel-fade" data-ride="carousel">
             <ol class="carousel-indicators">
@@ -211,51 +246,51 @@ body{
                     <img class="d-block w-100" src="http://www.lfzpartners.com/public/storage/media/ckeditor/1569341808.jpg
                   " alt="First slide">
 
-                  <div class="carousel-caption d-none d-md-block">
-                    
-                    <a href="/Major">
-                        <button class="btn btn-danger">Major project</button>
-                      </a>
-                                <a href="/Minor">
-                                    <button class="btn btn-primary">Minor projects</button>
-                                </a>
-                    
-                    
-          
-                  </div>
+                    <div class="carousel-caption d-none d-md-block">
+
+                        <a href="/Major">
+                            <button class="btn btn-danger">Major project</button>
+                        </a>
+                        <a href="/Minor">
+                            <button class="btn btn-primary">Minor projects</button>
+                        </a>
+
+
+
+                    </div>
                 </div>
                 <div class="carousel-item">
                     <img class="d-block w-100" src="https://miro.medium.com/max/1025/1*xNeHZP7DZrMkVbC_lRShmQ.png
                   " alt="Second slide">
-                  <div class="carousel-caption d-none d-md-block">
-                    
-                    <a href="/Major">
-                        <button class="btn btn-danger">Major project</button>
-                      </a>
-                                <a href="/Minor">
-                                    <button class="btn btn-primary">Minor projects</button>
-                                </a>
-                 
-          
-                  </div>
+                    <div class="carousel-caption d-none d-md-block">
+
+                        <a href="/Major">
+                            <button class="btn btn-danger">Major project</button>
+                        </a>
+                        <a href="/Minor">
+                            <button class="btn btn-primary">Minor projects</button>
+                        </a>
+
+
+                    </div>
                 </div>
                 <div class="carousel-item">
                     <img class="d-block w-100" src="https://y6b8k9e7.stackpathcdn.com/wp-content/uploads/2021/03/robot-humanoid-use-laptop-sit-table-big-data-analytic.jpg
                     " alt="Third slide">
 
                     <div class="carousel-caption d-none d-md-block">
-                        
-              <a href="/Major">
-                <button class="btn btn-danger">Major project</button>
-              </a>
+
+                        <a href="/Major">
+                            <button class="btn btn-danger">Major project</button>
+                        </a>
                         <a href="/Minor">
                             <button class="btn btn-primary">Minor projects</button>
                         </a>
-                       
-                       
-                     
-              
-                      </div>
+
+
+
+
+                    </div>
                 </div>
             </div>
             <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
@@ -271,15 +306,23 @@ body{
 
     </div>
 
+    
     <br>
+    <br>
+
+    <br>
+    <br>
+    <br>
+    <div>
+        <img src="{{ url_for('static',filename = 'image/project_QR (2).png')  }}" alt="Paris" class="center">
+    </div>
+    
+
 
     
     <br>
     <br>
-    <br>
-
-    <br>
-
+    <br><br>
     <div class="col-md-12">
         <center>
             <h3 class="section-title" style="text-align: center; color:#AAA;">Sponsored By</h3>
@@ -288,6 +331,9 @@ body{
 
     <br>
     <br>
+
+
+
 
     <div class="container">
         <div class="row">
@@ -344,7 +390,7 @@ body{
 
 
             <br><br><br><br><br>
-            
+
             <!-- change later-->
             <script src="{{ url_for('static',filename = 'js/bootstrap.bundle.min.js')  }}"></script>
 
@@ -353,35 +399,34 @@ body{
 
 
 
-           
+
 
             <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-            integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-            crossorigin="anonymous"></script>
-          <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-            crossorigin="anonymous"></script>
-          <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-            integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-            crossorigin="anonymous"></script>
+                integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+                crossorigin="anonymous"></script>
+            <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+                integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+                crossorigin="anonymous"></script>
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+                integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+                crossorigin="anonymous"></script>
 
 
         </div>
 
 
     </div>
-      <div class="footer">
+    <div class="footer">
 
-   
-     <footer class="container">
-               
-                <p>©2022 breastcancer.com</a> <br><a href="#" style="color: #000000;">Back to top</a></p>
-            </footer>
-        </div>
+
+        <footer class="container">
+
+            <p>©2022 breastcancer.com</a> <br><a href="#" style="color: #000000;">Back to top</a></p>
+        </footer>
+    </div>
 </body>
 
 
 
 
 </html>
-
