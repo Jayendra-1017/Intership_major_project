@@ -4,7 +4,7 @@ from flask import Flask, request, jsonify, render_template
 
 import pickle
 import pandas as pd
-import subprocess as sp
+
 
 
 app = Flask(__name__)
