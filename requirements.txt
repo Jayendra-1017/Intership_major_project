@@ -10,4 +10,5 @@ scikit-learn
 matplotlib
 pandas
 streamlit
-
+nltk
+g unicorn  
