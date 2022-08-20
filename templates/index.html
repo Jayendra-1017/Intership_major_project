@@ -1,6 +1,7 @@
 
 
 <!doctype html>
+
 <html lang="en">
 
 <head>
@@ -12,7 +13,9 @@
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link href="{{ url_for('static',filename = 'css/bootstrap.min.css')  }}" rel="stylesheet">
+        <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="/static/css/bootstrap.min.css" rel="stylesheet">
     <title> Brest cancer pridiction </title>
 
     <style>
@@ -40,7 +43,7 @@
         }
 
         body {
-            background-color: #FFC0CB;
+            background-color: #FFFFF7;
         }
 
 
@@ -138,7 +141,7 @@
             padding: 2px 16px;
         }
 
-      
+
 
 
         /* Add rounded corners to the top left and the top right corner of the image */
@@ -146,285 +149,500 @@
             border-radius: 5px 5px 0 0;
         }
 
-        
+
         .center {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 400px;
-height: 400px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 400px;
+            height: 400px;
+        }
+        body {
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  font-size: 1rem;
+  font-weight: 3;
+  line-height: 1.5;
+  color: #212529;
+  text-align: right;
 }
+        .fa {
+  display: inline-block;
+  font: normal normal normal 14px/1 FontAwesome;
+    font-size:20 px;
+  /* font-size: inherit; */
+ 
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  padding: 15px;
+  text-align: right;
+ 
+}
+
+.ico{
+    background-color:#FFCCCB;
+    /* margin-right: 10px; */
+}
+@charset "UTF-8";
+
+.rounded-social-buttons {
+  text-align: right;
+  margin-top: 10px;
+}
+
+.rounded-social-buttons .social-button {
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  width: 3.125rem;
+  height: 3.125rem;
+  border: 0.125rem solid transparent;
+  padding: 0;
+  text-decoration: none;
+  text-align: center;
+  color: #fefefe;
+  font-size: 1.5625rem;
+  font-weight: normal;
+  line-height: 2em;
+  border-radius: 1.6875rem;
+  transition: all 0.5s ease;
+  margin-right: 0.25rem;
+  margin-bottom: 0.25rem;
+}
+
+.rounded-social-buttons .social-button:hover, .rounded-social-buttons .social-button:focus {
+  -webkit-transform: rotate(360deg);
+      -ms-transform: rotate(360deg);
+          transform: rotate(360deg);
+}
+
+.rounded-social-buttons .social-button.facebook {
+  background: #3b5998;
+}
+
+.rounded-social-buttons .social-button.facebook:before {
+  font-family: "FontAwesome";
+  content: "";
+}
+
+.rounded-social-buttons .social-button.facebook:hover, .rounded-social-buttons .social-button.facebook:focus {
+  color: #3b5998;
+  background: #fefefe;
+  border-color: #3b5998;
+}
+
+.rounded-social-buttons .social-button.twitter {
+  background: #55acee;
+}
+
+.rounded-social-buttons .social-button.twitter:before {
+  font-family: "FontAwesome";
+  content: "";
+}
+
+.rounded-social-buttons .social-button.twitter:hover, .rounded-social-buttons .social-button.twitter:focus {
+  color: #55acee;
+  background: #fefefe;
+  border-color: #55acee;
+}
+
+.rounded-social-buttons .social-button.linkedin {
+  background: #007bb5;
+}
+
+.rounded-social-buttons .social-button.linkedin:before {
+  font-family: "FontAwesome";
+  content: "";
+}
+
+.rounded-social-buttons .social-button.linkedin:hover, .rounded-social-buttons .social-button.linkedin:focus {
+  color: #007bb5;
+  background: #fefefe;
+  border-color: #007bb5;
+}
+
+.rounded-social-buttons .social-button.youtube {
+  background: #bb0000;
+}
+
+.rounded-social-buttons .social-button.youtube:before {
+  font-family: "FontAwesome";
+  content: "";
+}
+
+.rounded-social-buttons .social-button.youtube:hover, .rounded-social-buttons .social-button.youtube:focus {
+  color: #bb0000;
+  background: #fefefe;
+  border-color: #bb0000;
+}
+
+.rounded-social-buttons .social-button.instagram {
+  background: #125688;
+}
+
+.rounded-social-buttons .social-button.instagram:before {
+  font-family: "FontAwesome";
+  content: "";
+}
+
+.rounded-social-buttons .social-button.instagram:hover, .rounded-social-buttons .social-button.instagram:focus {
+  color: #125688;
+  background: #fefefe;
+  border-color: #125688;
+}
+
+.rounded-social-buttons .social-button.pinterest {
+  background: #cb2027;
+}
+
+.rounded-social-buttons .social-button.pinterest:before {
+  font-family: "FontAwesome";
+  content: "";
+}
+
+.rounded-social-buttons .social-button.pinterest:hover, .rounded-social-buttons .social-button.pinterest:focus {
+  color: #cb2027;
+  background: #fefefe;
+  border-color: #cb2027;
+}
+
+.rounded-social-buttons .social-button.google-plus {
+  background: #dd4b39;
+}
+
+.rounded-social-buttons .social-button.google-plus:before {
+  font-family: "FontAwesome";
+  content: "";
+}
+
+.rounded-social-buttons .social-button.google-plus:hover, .rounded-social-buttons .social-button.google-plus:focus {
+  color: #dd4b39;
+  background: #fefefe;
+  border-color: #dd4b39;
+}
+
+.rounded-social-buttons .social-button.github {
+  background: #000000;
+}
+
+.rounded-social-buttons .social-button.github:before {
+  font-family: "FontAwesome";
+  content: "";
+}
+
+.rounded-social-buttons .social-button.github:hover, .rounded-social-buttons .social-button.github:focus {
+  color: #000000;
+  background: #fefefe;
+  border-color: #000000;
+}
+
+.rounded-social-buttons .social-button.tumblr {
+  background: #32506d;
+}
+
+.rounded-social-buttons .social-button.tumblr:before {
+  font-family: "FontAwesome";
+  content: "";
+}
+
+.rounded-social-buttons .social-button.tumblr:hover, .rounded-social-buttons .social-button.tumblr:focus {
+  color: #32506d;
+  background: #fefefe;
+  border-color: #32506d;
+}
+
+
     </style>
 
 
 
 </head>
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="header">
+<div>
+<div >
+    <header>
+        <div class="rounded-social-buttons">
+            <a class="social-button github" href="https://github.com/Jayendra-1017"></a>
+            <a class="social-button twitter" href="#"></a>
+            <a class="social-button linkedin" href="#"></a>
+           
+            <a class="social-button instagram" href=""></a>
+           
+           
+           
+            
+          </div>
+    </header>
+</div>
 
-        <div class="header-right">
-            <a href="/">HOME</a>
-            <a href="/contact">Contact us</a>
-            <a href="/aboutusnew">about us</a>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="header">
+
+            <div class="header-right">
+                <a href="/">HOME</a>
+                <a href="/contact">Contact us</a>
+                <a href="/aboutusnew">about us</a>
+
+            </div>
 
         </div>
-
-    </div>
-    <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-            aria-haspopup="true" aria-expanded="false">
-            projects
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="/Major">Major projects</a>
-            <a class="dropdown-item" href="/Minor">Minor projects</a>
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                projects
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="/Major">Major projects</a>
+                <a class="dropdown-item" href="/Minor">Minor projects</a>
 
 
 
-        </div>
-    </li>
-</nav>
-
-
-<body>
-
-
-    <div>
-
-        <body background-color:black>
-            <nav style="width: 100%;" class="navbar navbar-dark bg-secondary">
-                <a class="  navbar-brand" href="#"
-                    style="margin-left: 0px; margin-top: 0px; margin-right: 0px; margin-botttom: 0px;">
-                    <img style="max-height: auto; width:100%;"
-                        src="{{ url_for('static',filename = 'image/PIET logo with tagline.jpg')  }}"
-                        class="img-responsive"
-                        style="margin-top:0px;style=width: auto; height: auto; min-width:100%; min-height: auto;">
-
-
-    </div>
-
-    </a>
-
+            </div>
+        </li>
+       
     </nav>
+</div>
+
+    <body>
+
+
+        <div>
+
+            <body background-color:black>
+                <nav style="width: 100%;" class="navbar navbar-dark bg-secondary">
+                    <a class="  navbar-brand" href="#"
+                        style="margin-left: 0px; margin-top: 0px; margin-right: 0px; margin-botttom: 0px;">
+                        <img style="max-height: auto; width:100%;" src="/static/image/PIET%20logo%20with%20tagline.jpg"
+                            class="img-responsive"
+                            style="margin-top:0px;style=width: auto; height: auto; min-width:100%; min-height: auto;">
+
+
+        </div>
+
+        </a>
+
+        </nav>
 
 
 
 
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-5 d-none d-sm-block d-sm-none d-md-block d-md-none d-lg-block">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-5 d-none d-sm-block d-sm-none d-md-block d-md-none d-lg-block">
 
-                <img src="https://indianewengland.com/wp-content/uploads/2019/03/Breast-cancer.jpg" ) }}"
-                    class="img-fluid" style="width: auto; height: 200px; min-width: 400px;min-height: 300px;">
+                    <img src="https://indianewengland.com/wp-content/uploads/2019/03/Breast-cancer.jpg" ) }}"
+                        class="img-fluid" style="width: auto; height: 200px; min-width: 400px;min-height: 300px;">
 
-            </div>
+                </div>
 
-            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-7 " style=" padding: 30px;">
-                <h1 style="color:#000000"><B> <i>Brest cancer pridiction system<B><i></h1>
-                <br><br>
-                <p style="font-size:20px;text-align:justify; color: #808000"><i>It is a Internship project developed at
-                        Summer internship 2022 at poornima Institute of Engineering & technology, Jaipur.This Summer
-                        Internship 2022 on Artificial intelligence and Data Science was conducted from 27 June 2022 to
-                        14 August 2022</i> </p>
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-7 " style=" padding: 30px;">
+                    <h1 style="color:#000000"><B> <i>Brest cancer pridiction system<B><i></h1>
+                    <br><br>
+                    <p style="font-size:20px;text-align:justify; color: #808000"><i>It is a Internship project developed
+                            at
+                            Summer internship 2022 at poornima Institute of Engineering & technology, Jaipur.This Summer
+                            Internship 2022 on Artificial intelligence and Data Science was conducted from 27 June 2022
+                            to
+                            14 August 2022</i> </p>
 
 
-                <br><br>
+                    <br><br>
 
+                </div>
             </div>
         </div>
-    </div>
 
-    <div>
-        <div id="carouselExampleCaptions" class="carousel slide carousel-fade" data-ride="carousel">
-            <ol class="carousel-indicators">
-                <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
-                <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
-                <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
-            </ol>
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img class="d-block w-100" src="http://www.lfzpartners.com/public/storage/media/ckeditor/1569341808.jpg
+        <div>
+            <div id="carouselExampleCaptions" class="carousel slide carousel-fade" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+                    <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+                    <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+                </ol>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img class="d-block w-100" src="http://www.lfzpartners.com/public/storage/media/ckeditor/1569341808.jpg
                   " alt="First slide">
 
-                    <div class="carousel-caption d-none d-md-block">
+                        <div class="carousel-caption d-none d-md-block">
 
-                        <a href="/Major">
-                            <button class="btn btn-danger">Major project</button>
-                        </a>
-                        <a href="/Minor">
-                            <button class="btn btn-primary">Minor projects</button>
-                        </a>
+                            <a href="/Major">
+                                <button class="btn btn-danger">Major project</button>
+                            </a>
+                            <a href="/Minor">
+                                <button class="btn btn-primary">Minor projects</button>
+                            </a>
 
 
 
+                        </div>
                     </div>
-                </div>
-                <div class="carousel-item">
-                    <img class="d-block w-100" src="https://miro.medium.com/max/1025/1*xNeHZP7DZrMkVbC_lRShmQ.png
+                    <div class="carousel-item">
+                        <img class="d-block w-100" src="https://miro.medium.com/max/1025/1*xNeHZP7DZrMkVbC_lRShmQ.png
                   " alt="Second slide">
-                    <div class="carousel-caption d-none d-md-block">
+                        <div class="carousel-caption d-none d-md-block">
 
-                        <a href="/Major">
-                            <button class="btn btn-danger">Major project</button>
-                        </a>
-                        <a href="/Minor">
-                            <button class="btn btn-primary">Minor projects</button>
-                        </a>
+                            <a href="/Major">
+                                <button class="btn btn-danger">Major project</button>
+                            </a>
+                            <a href="/Minor">
+                                <button class="btn btn-primary">Minor projects</button>
+                            </a>
 
 
+                        </div>
                     </div>
-                </div>
-                <div class="carousel-item">
-                    <img class="d-block w-100" src="https://y6b8k9e7.stackpathcdn.com/wp-content/uploads/2021/03/robot-humanoid-use-laptop-sit-table-big-data-analytic.jpg
+                    <div class="carousel-item">
+                        <img class="d-block w-100" src="https://y6b8k9e7.stackpathcdn.com/wp-content/uploads/2021/03/robot-humanoid-use-laptop-sit-table-big-data-analytic.jpg
                     " alt="Third slide">
 
-                    <div class="carousel-caption d-none d-md-block">
+                        <div class="carousel-caption d-none d-md-block">
 
-                        <a href="/Major">
-                            <button class="btn btn-danger">Major project</button>
-                        </a>
-                        <a href="/Minor">
-                            <button class="btn btn-primary">Minor projects</button>
-                        </a>
-
-
-
-
-                    </div>
-                </div>
-            </div>
-            <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-            </a>
-        </div>
-
-
-    </div>
-
-    
-    <br>
-    <br>
-
-    <br>
-    <br>
-    <br>
-    <div>
-        <img src="{{ url_for('static',filename = 'image/project_QR (3).png')  }}" alt="Paris" class="center">
-    </div>
-    
-
-
-    
-    <br>
-    <br>
-    <br><br>
-    <div class="col-md-12">
-        <center>
-            <h3 class="section-title" style="text-align: center; color:#AAA;">Sponsored By</h3>
-        </center>
-    </div>
-
-    <br>
-    <br>
+                            <a href="/Major">
+                                <button class="btn btn-danger">Major project</button>
+                            </a>
+                            <a href="/Minor">
+                                <button class="btn btn-primary">Minor projects</button>
+                            </a>
 
 
 
-
-    <div class="container">
-        <div class="row">
-            <div class="col-xs-12 col-md-4">
-                <div class="card mb-3">
-
-                    <div class="card">
-                        <img style="max-height: 200px;"
-                            src="{{ url_for('static',filename = 'image/AICTEIdeaLabFooterLogo.png')  }}"
-                            class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title" style="text-align:center">IDEA LAB</h5>
 
                         </div>
-
-
                     </div>
                 </div>
+                <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
             </div>
-
-            <div class="col-xs-12 col-md-4">
-                <div class="card mb-3">
-
-                    <div class="card">
-                        <img style="max-height: 200px;" src="{{ url_for('static',filename = 'image/nbanew.png')  }}"
-                            class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title" style="text-align:center">NBA</h5>
-
-                        </div>
-
-
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-xs-10 col-md-3">
-                <div class="card mb-3">
-
-                    <div class="card">
-                        <img style="max-height: 200px;" src="{{ url_for('static',filename = 'image/aicte-logo.png')  }}"
-                            class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title" ; style="text-align:center; color:#AAA;">AICTE MODROB DEEP
-                                LEARNING LAB</h5>
-
-                        </div>
-
-                    </div>
-
-                </div>
-            </div>
-
-
-
-            <br><br><br><br><br>
-
-            <!-- change later-->
-            <script src="{{ url_for('static',filename = 'js/bootstrap.bundle.min.js')  }}"></script>
-
-
-
-
-
-
-
-
-            <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-                integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-                crossorigin="anonymous"></script>
-            <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-                integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-                crossorigin="anonymous"></script>
-            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-                integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-                crossorigin="anonymous"></script>
 
 
         </div>
 
 
-    </div>
-    <div class="footer">
+        <br>
+        <br>
+
+        <br>
+        <br>
+        <br>
+        <div>
+            <img src="/static/image/project_QR (3).png" alt="logo" class="center">
+        </div>
 
 
-        <footer class="container">
 
-            <p>©2022 breastcancer.com</a> <br><a href="#" style="color: #000000;">Back to top</a></p>
-        </footer>
-    </div>
-</body>
+
+
+
+
+        <br>
+        <br>
+        <br><br>
+        <div class="col-md-12">
+            <center>
+                <h3 class="section-title" style="text-align: center; color:#AAA;">Sponsored By</h3>
+            </center>
+        </div>
+
+        <br>
+        <br>
+
+
+
+
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-md-4">
+                    <div class="card mb-3">
+
+                        <div class="card">
+                            <img style="max-height: 200px;" src="/static/image/AICTEIdeaLabFooterLogo.png"
+                                class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title" style="text-align:center">IDEA LAB</h5>
+
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xs-12 col-md-4">
+                    <div class="card mb-3">
+
+                        <div class="card">
+                            <img style="max-height: 200px;" src="/static/image/nbanew.png" class="card-img-top"
+                                alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title" style="text-align:center">NBA</h5>
+
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xs-10 col-md-3">
+                    <div class="card mb-3">
+
+                        <div class="card">
+                            <img style="max-height: 200px;" src="/static/image/aicte-logo.png" class="card-img-top"
+                                alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title" ; style="text-align:center; color:#AAA;">AICTE MODROB DEEP
+                                    LEARNING LAB</h5>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+
+
+
+                <br><br><br><br><br>
+
+                <!-- change later-->
+                <script src="/static/js/bootstrap.bundle.min.js"></script>
+
+
+
+
+
+
+
+
+                <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+                    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+                    crossorigin="anonymous"></script>
+                <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+                    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+                    crossorigin="anonymous"></script>
+                <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+                    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+                    crossorigin="anonymous"></script>
+
+
+            </div>
+
+
+        </div>
+        <div class="footer">
+
+
+            <footer class="container">
+
+                <p>©2022 breastcancer.com</a> <br><a href="#" style="color: #000000;">Back to top</a></p>
+            </footer>
+        </div>
+    </body>
 
 
 
