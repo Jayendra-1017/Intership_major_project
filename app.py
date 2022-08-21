@@ -30,7 +30,11 @@ def contact():
 @app.route('/Major')
 def Major():
   
-  return render_template('Major.html') 
+  return render_template('Major.html')
+@app.route('/Gallery')
+def Gallery():
+  
+  return render_template('Gallery.html') 
 
 
 @app.route('/Minor')
