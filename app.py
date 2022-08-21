@@ -22,7 +22,7 @@ def home():
 def aboutusnew():
     return render_template('aboutusnew.html')
 
-@app.route('/contact',methods=['POST'])
+@app.route('/contact')
 def contact():
   
   return render_template('contact.html')
