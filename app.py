@@ -30,7 +30,7 @@ def contact():
   rep_pass=request.form['rep_pass']
   give="Welcome %s %Name to my website"
   
-    return render_template('contact.html',txt_name=give)
+  return render_template('contact.html',txt_name=give)
 
 
 @app.route('/Major')
