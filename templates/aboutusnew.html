@@ -8,6 +8,8 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="style.css">
   <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
@@ -81,9 +83,76 @@
       color: white;
       text-align: center;
     }
+    body{
+    padding: 10px;
+    font-family: Arial;
+     
+}
+.top{
+    font-size: 3em;
+    font-weight: bold;
+    text-align: center;
+}
+.wrap{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 30px;
+    max-width: 1000px;
+    margin: auto;
+    margin-top: 50px;
+     
+ 
+}
+.box{
+    background: gray;
+    border-radius: 10px;
+}
+img{
+    width:100%;
+    height: 300px;
+}
+.social{
+    margin-top: -270px;
+    background: #2b3da6;
+    border-radius: 0 20px 20px 0 ;
+    position: absolute;
+     
+     
+}
+a{
+    display: flex;
+    margin: 5px;
+ 
+     
+    position: relative;
+    text-decoration: none;
+    font-size:15px;
+    color:#fff;
+    padding: 5px;
+}
+.fa{
+    line-height: 30px;
+    width:30px;
+    height: 30px;
+    position: relative;
+    text-align: center;
+     
+}
+.text{
+    text-align: center;
+    color:#fff;
+}
+p{
+    font-size:20px;
+}
 
-    </head>
+.top{
+  background-color: coral;
+  color: black;
+}
+ 
   </style>
+     </head>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="header">
 
@@ -153,81 +222,55 @@
     </div>
   </div>
 
- 
-  <div class="container">
-    <div class="row">
-      
-      <div class="col-xs-12 col-md-4">
-        <div class="card mb-4">
-
-          <div class="card">
-
-            <img style="max-height: 500px;" src="{{ url_for('static',filename = 'image/jayendra.jpg')  }}"
-              class="card-img-top" alt="...">
-            <h5 class="card-title" ; style="text-align:center">Developer</h5>
-            <p class="card-text" ; style="text-align:justify">Jayendra sharma,Student of Poornima Institute of
-              Engineering and technologies</p>
-            <a href="https://www.linkedin.com/in/jayendra-sharma-8667ba201/"><i class="fa fa-linkedin-square"
-                style="font-size:48px;color:red"></i></a>
-
-
-            <div class="card-body">
-
-
-
+  <div class ="top"> <i>Contribution</i>
+    </div>
+    <div class="wrap">
+         
+        <div class="box">
+             
+            <img src ="{{ url_for('static',filename = 'image/jayendra.jpg')  }}">
+            <div class="social">
+            
+                <a href="https://twitter.com/Jayendra20cs085"><i class ="fa fa-twitter"></i></a>
+                <a href="https://github.com/Jayendra-1017"><i class ="fa fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/jayendra-sharma-8667ba201/"><i class ="fa fa-linkedin"></i></a>
+            <a href="https://www.instagram.com/jayendra_pandit_17/"><i class ="fa fa-instagram"></i></a>
             </div>
-
-
-          </div>
+            <div class="text">
+            <h1>Jayendra sharma</h1>
+                <p>Developer</p>
+            </div>
         </div>
-      </div>
-
-
-      <div class="col-xs-12 col-md-4">
-        <div class="card mb-4">
-
-          <div class="card">
-
-            <img style="max-height: 500px;" src="{{ url_for('static',filename = 'image/Deepak Moud.jpg')  }}"
-              class="card-img-top" alt="...">
-            <h5 class="card-title" ; style="text-align:center">Trainer</h5>
-            <p class="card-text" ; style="text-align:justify">Deepak Moud,HOD, Deepartment of commputer science,PIET</p>
+         
+        <div class="box">
+             
+            <img src ="{{ url_for('static',filename = 'image/Deepak Moud.jpg')  }}">
+            <div class="social">
            
-
-            <div class="card-body">
-
-
-
+                <a href="https://www.linkedin.com/in/deepak-moud-876076119"><i class ="fa fa-linkedin"></i></a>
+            <a href=" https://github.com/deepakmoud"><i class ="fa fa-github"></i></a>
             </div>
-
-
-          </div>
+            <div class="text">
+            <h1>Deepak Moud</h1>
+                <p>Trainer</p>
+            </div>
         </div>
-      </div>
-
-      
-      <div class="col-xs-12 col-md-4">
-        <div class="card mb-4">
-
-          <div class="card">
-
-            <img style="max-height: 500px;" src="{{ url_for('static',filename = 'image/uday.jpeg')  }}"
-              class="card-img-top" alt="...">
-            <h5 class="card-title" ; style="text-align:center">Trainer</h5>
-            <p class="card-text" ; style="text-align:justify">Dr.Uday Pratap singh,Deepartment of commputer science,PIET</p>
+         
+        <div class="box">
+             
+            <img src ="{{ url_for('static',filename = 'image/uday.jpeg')  }}">
+            <div class="social">
            
-
-
-            <div class="card-body">
-
-
-
+              <a href="https://github.com/singhudaypratap"><i class ="fa fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/dr-uday-pratap-singh"><i class ="fa fa-linkedin"></i></a>
+                
             </div>
-
-
-          </div>
+            <div class="text">
+            <h1>Dr uday pratap singh</h1>
+                <p>Trainer</p>
+            </div>
         </div>
-      </div>
+    </div>
 
 
       <br>
