@@ -1,22 +1,17 @@
-import numpy as np
 from flask import Flask, request, jsonify, render_template
-
-
+import numpy as np
 import pickle
-import pandas as pd
-import subprocess as sp
-
-
-
-
-
-
 
 
 app = Flask(__name__)
 
+    
+model_RF=pickle.load(open('RF_model_predictor.pkl', 'rb')) 
+model_KNN=pickle.load(open('KNN_model_predictor.pkl', 'rb')) 
+model_K_SVM=pickle.load(open('SVM_model_predictor.pkl', 'rb')) 
+model_DT=pickle.load(open('DT_model_predictor.pkl', 'rb')) 
+model_NB=pickle.load(open('NB_model_predictor.pkl', 'rb')) 
 
-  
 
 
 @app.route('/')
@@ -27,87 +22,81 @@ def home():
 @app.route('/aboutusnew')
 def aboutusnew():
     return render_template('aboutusnew.html')
-
-@app.route('/contact')
-def contact():
   
-  return render_template('contact.html')
-
-
 @app.route('/Major')
 def Major():
   
-  return render_template('Major.html')
-@app.route('/Gallery')
-def Gallery():
+  return render_template('Major.html')  
   
-  return render_template('Gallery.html') 
-
-
-@app.route('/Minor')
-def Minor():
   
-  return render_template('Minor.html') 
-
+  
+  
 @app.route('/predict',methods=['GET'])
+
 def predict():
     
-    
-    '''
-    For rendering results on HTML GUI
-    '''
-    #result=np.array(['SqFt','bedrooms','Offers','bricks','Neighborhood','Bathrooms'])
-    #result.reshape(1,-1)
-    #print(result)
-    r1 = float(request.args.get('rm'))
-    r2 = float(request.args.get('text'))
-    r3 = float(request.args.get('perimeter'))
-    r4 = float(request.args.get('area'))
-    r5 = float(request.args.get('smooth'))
-    r6 = float(request.args.get('compact'))
-    r7 = float(request.args.get('connect'))
-    r8 = float(request.args.get('concave'))
-    r9 = float(request.args.get('sym'))
-    r10 = float(request.args.get('fract'))
-    r11 = float(request.args.get('radius'))
-    model1=int(request.args.get('model1'))
-   
+     
+    cs = int(request.args.get('creditscore'))
+    age = int(request.args.get('age'))
+    ten = int(request.args.get('tenure'))
+    bal = float(request.args.get('balance'))
+    pro = int(request.args.get('products'))
+    sal = float(request.args.get('salary'))
+    con = (request.args.get('con'))
 
-    
-    
-    if model1==0:
-      model=pickle.load(open('RF_cancer_predictor.pkl','rb'))
-
-    elif model1==1:
-       model=pickle.load(open('DT_cancer_predictor.pkl','rb'))
-    
-    elif model1==2:
-      model=pickle.load(open('KNN_cancer_predictor.pkl','rb'))
-
-    elif model1==3:
-       model=pickle.load(open('LC_cancer_predictor.pkl','rb'))
-
-    elif model1==4:
-       model=pickle.load(open('SVM_cancer_predictor.pkl','rb'))
-
-    elif model1==5:
-       model=pickle.load(open('NB_cancer_predictor.pkl','rb'))
-
-    elif model1==6:
-       model=pickle.load(open('linear_cancer_pridictor.pkl','rb'))   
-
-    dataset= pd.read_csv('breast-cancer.csv')
-    X = dataset.iloc[:,2:13]
-    from sklearn.preprocessing import StandardScaler
-    sc = StandardScaler()
-    X = sc.fit_transform(X)
-    prediction = model.predict(sc.transform([[r1,r2,r3,r4,r5,r6,r7,r8,r9,r10,r11]]))
-    if prediction==1:
-      message="That you are Suffrering from cancer"
+    if con=="France":
+      con = 0
+    elif con=="Spain":
+      con = 1
     else:
-      message=" that you are not suffering from cancer"  
-  
-    return render_template('Major.html',prediction_text="This model is saying {} ".format(message))
+      con = 2
+
+    gen = (request.args.get('gen'))
+    
+    if gen=="Male":
+      gen = 1
+    else:
+      gen = 0
+
+    cr = (request.args.get('cr'))
+
+    if cr=="Yes":
+      cr = 1
+    else:
+      cr = 0
+
+    active = (request.args.get('active'))
+
+    if active=="Male":
+      active = 1
+    else:
+      active = 0
+
+# CreditScore	Geography	Gender	Age	Tenure	Balance	NumOfProducts	HasCrCard	IsActiveMember	EstimatedSalary	
+    Model = (request.args.get('Model'))
+
+    if Model=="Random Forest Classifier":
+      prediction = model_RF.predict([[cs, con, gen, age, ten, bal, pro, cr, active, sal]])
+
+    elif Model=="Decision Tree Classifier":
+      prediction = model_DT.predict([[cs, con, gen, age, ten, bal, pro, cr, active, sal]])
+
+    elif Model=="KNN Classifier":
+      prediction = model_KNN.predict([[cs, con, gen, age, ten, bal, pro, cr, active, sal]])
+
+    elif Model=="SVM Classifier":
+      prediction = model_K_SVM.predict([[cs, con, gen, age, ten, bal, pro, cr, active, sal]])
+
+    else:
+      prediction = model_NB.predict([[cs, con, gen, age, ten, bal, pro, cr, active, sal]])
+
+    
+    if prediction == [1]:
+      return render_template('Major.html', prediction_text='The person not exited', extra_text ="-> Prediction by " + Model)
+    
+    else:
+      return render_template('Major.html', prediction_text='The person is exited', extra_text ="-> Prediction by " + Model)
+
 
 
 if __name__ == "__main__":
