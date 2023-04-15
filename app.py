@@ -1,18 +1,23 @@
+import numpy as np
 from flask import Flask, request, jsonify, render_template
 from flask_ngrok import run_with_ngrok
+
 import pickle
+import pandas as pd
+import subprocess as sp
+
+
+
+
+
+
 
 
 app = Flask(__name__)
 
-    
-model_RF=pickle.load(open('/content/drive/My Drive/RF_model_predictor.pkl', 'rb')) 
-model_KNN=pickle.load(open('/content/drive/My Drive/KNN_model_predictor.pkl', 'rb')) 
-model_K_SVM=pickle.load(open('/content/drive/My Drive/SVM_model_predictor.pkl', 'rb')) 
-model_DT=pickle.load(open('/content/drive/My Drive/DT_model_predictor.pkl', 'rb')) 
-model_NB=pickle.load(open('/content/drive/My Drive/NB_model_predictor.pkl', 'rb')) 
 
-run_with_ngrok(app)
+  
+
 
 @app.route('/')
 def home():
@@ -28,16 +33,32 @@ def contact():
   
   return render_template('contact.html')
 
+
 @app.route('/Major')
 def Major():
   
-  return render_template('Major.html')  
+  return render_template('Major.html')
+@app.route('/Gallery')
+def Gallery():
   
-@app.route('/predict',methods=['GET'])
+  return render_template('Gallery.html') 
 
+
+@app.route('/Minor')
+def Minor():
+  
+  return render_template('Minor.html') 
+
+@app.route('/predict',methods=['GET'])
 def predict():
     
-     
+    
+    '''
+    For rendering results on HTML GUI
+    '''
+    #result=np.array(['SqFt','bedrooms','Offers','bricks','Neighborhood','Bathrooms'])
+    #result.reshape(1,-1)
+    #print(result)
     r1 = float(request.args.get('rm'))
     r2 = float(request.args.get('text'))
     r3 = float(request.args.get('perimeter'))
@@ -49,35 +70,45 @@ def predict():
     r9 = float(request.args.get('sym'))
     r10 = float(request.args.get('fract'))
     r11 = float(request.args.get('radius'))
+    model1=int(request.args.get('model1'))
+   
 
     
     
+    if model1==0:
+      model=pickle.load(open('RF_cancer_predictor.pkl','rb'))
 
+    elif model1==1:
+       model=pickle.load(open('DT_cancer_predictor.pkl','rb'))
+    
+    elif model1==2:
+      model=pickle.load(open('KNN_cancer_predictor.pkl','rb'))
 
-# CreditScore	Geography	Gender	Age	Tenure	Balance	NumOfProducts	HasCrCard	IsActiveMember	EstimatedSalary	
-    Model = (request.args.get('Model'))
+    elif model1==3:
+       model=pickle.load(open('LC_cancer_predictor.pkl','rb'))
 
-    if Model=="Random Forest Classifier":
-      prediction = model_RF.predict([[cs, con, gen, age, ten, bal, pro, cr, active, sal]])
+    elif model1==4:
+       model=pickle.load(open('SVM_cancer_predictor.pkl','rb'))
 
-    elif Model=="Decision Tree Classifier":
-      prediction = model_DT.predict([[cs, con, gen, age, ten, bal, pro, cr, active, sal]])
+    elif model1==5:
+       model=pickle.load(open('NB_cancer_predictor.pkl','rb'))
 
-    elif Model=="KNN Classifier":
-      prediction = model_KNN.predict([[cs, con, gen, age, ten, bal, pro, cr, active, sal]])
+    elif model1==6:
+       model=pickle.load(open('linear_cancer_pridictor.pkl','rb'))   
 
-    elif Model=="SVM Classifier":
-      prediction = model_K_SVM.predict([[cs, con, gen, age, ten, bal, pro, cr, active, sal]])
-
+    dataset= pd.read_csv('breast-cancer.csv')
+    X = dataset.iloc[:,2:13]
+    from sklearn.preprocessing import StandardScaler
+    sc = StandardScaler()
+    X = sc.fit_transform(X)
+    prediction = model.predict(sc.transform([[r1,r2,r3,r4,r5,r6,r7,r8,r9,r10,r11]]))
+    if prediction==1:
+      message="That you are Suffrering from cancer"
     else:
-      prediction = model_NB.predict([[cs, con, gen, age, ten, bal, pro, cr, active, sal]])
-
-    
-    if prediction == [1]:
-      return render_template('index.html', prediction_text='The person not exited', extra_text ="-> Prediction by " + Model)
-    
-    else:
-      return render_template('index.html', prediction_text='The person is exited', extra_text ="-> Prediction by " + Model)
+      message=" that you are not suffering from cancer"  
+  
+    return render_template('Major.html',prediction_text="This model is saying {} ".format(message))
 
 
-app.run()
+if __name__ == "__main__":
+    app.run(debug=True)
