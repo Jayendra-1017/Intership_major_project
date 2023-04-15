@@ -25,7 +25,7 @@
             border: 2px solid #ccc;
             /* padding: 30px; */
             background: #FFAC1C;
-
+a
             border-radius: 15px;
             margin-right: 100px;
             margin-top: 100px;
@@ -192,140 +192,126 @@
                         <marquee behavior="left" direction=""><B>MAJOR PROJECT BASED ON BREAST CANCER PRIDICTION
                                 SYSTEM</B></marquee>
                     </div>
-                    <!-- Main Input For Receiving Query to our ML -->
-                    <div class="form1">
-                        <form action="{{ url_for('predict')}} " method="get" class="row g-3 my-4">
+                  <div class="form1">
+        <form action="{{ url_for('predict')}} "method="get" class="row g-3 my-4">
 
-                            <div class="col-12" style="color: #000;">
-                                <label for="floatingInput" class="form-label">Enter radius_mean</label>
-                                <input type="number" class="form-control" id="rm" name="rm" step="any"
-                                    required="required" placeholder="Enter your radius mean">
-                            </div>
-                            <br>
-                            <br>
+            <div class="col-12" style="color: #000;">
+                <label for="floatingInput" class="form-label">Credit Score</label>
+                <input type="number" class="form-control" id="creditscore" name="creditscore" step="any" required="required" placeholder="Enter your credit score">
+            </div>
+         <br>
+         <br>
 
-
-                            <div class="col-12" style="color: #000;">
-                                <label for="floatingInput" class="form-label"> Enter texture_mean</label>
-                                <input type="number" class="form-control" id="text" name="text" step="any"
-                                    required="required" placeholder="Enter your texture">
-                            </div>
-                            <br>
-                            <br>
-
-                            <div class="col-12" style="color: #000;">
-                                <label for="floatingInput" class="form-label">Enter perimeter_mean</label>
-                                <input type="number" class="form-control" id="perimeter" name="perimeter" step="any"
-                                    required="required" placeholder="Enter your perimeter">
-                            </div>
-                            <br>
-                            <br>
-
-                            <div class="col-12" style="color: #000;">
-                                <label for="floatingInput" class="form-label"> Enter area_mean</label>
-                                <input type="number" class="form-control" id="area" name="area" step="any"
-                                    required="required" placeholder="Enter your area">
-                            </div>
-                            <br>
-                            <br>
-
-                            <div class="col-12" style="color: #000;">
-                                <label for="floatingInput" class="form-label"> Enter smoothness_mean</label>
-                                <input type="number" class="form-control" id="smooth" name="smooth" step="any"
-                                    required="required" placeholder="Enter the number of smooth">
-                            </div>
-                            <br>
-                            <br>
+            
+            <div class="col-12" style="color: #000;">
+                <label for="floatingInput" class="form-label">Age</label>
+                <input type="number" class="form-control" id="age" name="age" step="any" required="required" placeholder="Enter your age">
+            </div>
+            <br>
+            <br>
+            
+            <div class="col-12" style="color: #000;">
+                <label for="floatingInput" class="form-label">Tenure</label>
+                <input type="number" class="form-control" id="tenure" name="tenure" step="any" required="required" placeholder="Enter your tenure">
+            </div>
+            <br>
+            <br>
+            
+            <div class="col-12" style="color: #000;">
+                <label for="floatingInput" class="form-label">Balance</label>
+                <input type="number" class="form-control" id="balance" name="balance" step="any" required="required" placeholder="Enter your balance">
+            </div>
+            <br>
+            <br>
+            
+            <div class="col-12" style="color: #000;">
+                <label for="floatingInput" class="form-label">Number of Products</label>
+                <input type="number" class="form-control" id="products" name="products" step="any" required="required" placeholder="Enter the number of products">
+            </div>
+            <br>
+            <br>
 
 
-                            <div class="col-12" style="color: #000;">
-                                <label for="floatingInput" class="form-label"> Enter compactness_mean</label>
-                                <input type="number" class="form-control" id="compact" name="compact" step="any"
-                                    required="required" placeholder="Enter the estimated compact">
-                            </div>
-                            <br>
-                            <br>
+            <div class="col-12" style="color: #000;">
+                <label for="floatingInput" class="form-label">Estimated Salary</label>
+                <input type="number" class="form-control" id="salary" name="salary" step="any" required="required" placeholder="Enter the estimated salary">
+            </div>
+            <br>
+            <br>
+            
+            <div class="col-12" style="color: #000;">
+                <label for="floatingInput" class="form-label">Has a Credit Card </label>
+                <select id="cr" name ="cr" step = "any" class="form-select" required>
+                    <option selected>Yes</option>
+                    <option>No</option>
+                </select>
+            </div>
+            <br>
+            <br>
+            
+            <div class="col-12" style="color: #000;">
+                <label for="floatingInput" class="form-label">Country</label>
+                <select id="con" name ="con" step = "any" class="form-select" required>
+                    <option selected>France</option>
+                    <option>Spain</option>
+                    <option>Germany</option>
+                </select>
+            </div>
+            <br>
+            <br>
 
-                            <div class="col-12" style="color: #000;">
-                                <label for="floatingInput" class="form-label">Enter concavity_mean</label>
-                                <input type="number" class="form-control" id="connect" name="connect" step="any"
-                                    required="required" placeholder="Enter your connect">
-                            </div>
-                            <br>
-                            <br>
+            <div class="col-12" style="color: #000;">
+                <label for="floatingInput" class="form-label">Is active member</label>
+                <select id="active" name ="active" step = "any" class="form-select" required>
+                    <option selected>Yes</option>
+                    <option>No</option>
+                </select>
+            </div>
+            <br>
+            <br>
 
-                            <div class="col-12" style="color: #000;">
-                                <label for="floatingInput" class="form-label">Enter concave points_mean</label>
-                                <input type="number" class="form-control" id="concave" name="concave" step="any"
-                                    required="required" placeholder="Enter your concave">
-                            </div>
-                            <br>
-                            <br>
+            <div class="col-md-4" style="color: #000;">
+                <label for="inputState" class="form-label">Gender</label>
+                <select id="gender" name ="gender" step = "any" class="form-select" required>
+                    <option selected>Male</option>
+                    <option>Female</option>
+                </select>
+            </div>
+            <br><br>
 
-                            <div class="col-12" style="color: #000;">
-                                <label for="floatingInput" class="form-label">Enter symmetry_mean</label>
-                                <input type="number" class="form-control" id="sym" name="sym" step="any"
-                                    required="required" placeholder="Enter your sym">
-                            </div>
-                            <br>
-                            <br>
+            <div class="col-md-4" style="color: #000;">
+                <label for="inputState" class="form-label">Choose a Model</label>
+                <select id="Model" name ="Model" step = "any" class="form-select" required>
+                    <option selected>Random Forest Classifier</option>
+                    <option>Decision Tree Classifier</option>
+                    <option>KNN Classifier</option>
+                    <option>SVM Classifier</option>
+                    <option>Naive Bayes Classifier</option>
+                </select>
+            </div>
+            <br>
+            <br>
 
-                            <div class="col-12" style="color: #000;">
-                                <label for="floatingInput" class="form-label">Enter fractal_dimension_mean</label>
-                                <input type="number" class="form-control" id="fract" name="fract" step="any"
-                                    required="required" placeholder="Enter your fract">
-                            </div>
-                            <br>
-                            <br>
+            <div class="col-12">
+                <button type="submit" value="NB" name="NB" class="btn btn-outline-danger">Submit</button>
+            </div>
+            <br>
+        </form>
+        
+        
+        <p style="color: #FFF;">
+          {{prediction_text}}
+          {{extra_text}}
+        </p>
 
-
-                            <div class="col-12" style="color: #000;">
-                                <label for="floatingInput" class="form-label">Enter radius_se</label>
-                                <input type="number" class="form-control" id="radius" name="radius" step="any"
-                                    required="required" placeholder="Enter your radius">
-                            </div>
-                            <br>
-                            <br>
-
-
-
-
-
-                            <div class="col-md-4" style="color: #000;">
-
-                                <label for="model1">Choose a Model</label>
-                                <select name="model1" id="exp">
-                                    <option>Select</option>
-                                    <option value="0">Random forest</option>
-                                    <option value="1">Decision tree</option>
-                                    <option value="2">KNN</option>
-                                    <option value="3">logistic classifier</option>
-                                    <option value="4">SVM</option>
-                                    <option value="5">Naive Bayes</option>
-                                    <option value="6">linear Regression</option>
-                                </select>
-
-
-                            </div>
-                            <br>
-                            <br>
-
-
-                            <button type="submit" value="NB" name="NB" class="btn btn-outline-danger">predict</button>
-
-
-                        </form>
-                        </br>
+    </div>
 
 
-                        <p style="color: #FFF;">
-                            {{prediction_text}}
-
-                        </p>
-
+                        </div>
+            
+            
                     </div>
                 </div>
-
             </div>
 
 
@@ -340,7 +326,7 @@
    
      <footer class="container">
                
-                <p>©2022 breastcancer.com</a> <br><a href="#" style="color: #000000;">Back to top</a></p>
+                <p>©2023 churn_modelling.com</a> <br><a href="#" style="color: #000000;">Back to top</a></p>
             </footer>
             <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
             integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
